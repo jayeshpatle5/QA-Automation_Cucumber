@@ -8,7 +8,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
-import com.online.stepDefs.Hooks;
+import com.online.stepdefs.Hooks;
 
 
 public class ExtentManager {
