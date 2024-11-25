@@ -1,0 +1,24 @@
+url=
+CustomTime = 2000
+browser=chrome
+#dynamic reports yes or no
+#if "no" report will have name with "current time + index.html"
+#if yes report will have name with "index.html"
+overridereports=yes
+#passed step screenshot -->yes or no
+passedstepscreenshot=yes
+headless=no
+implicitWait=30
+pageloadtimeout=30
+#Failed step screenshot -->yes or no
+failedstepscreenshot=yes
+
+#Skipped step screenshot -->yes or no
+skipedstepscreenshot=yes
+
+#Retry Failed test cases -->yes or no
+retryfailedtests=no
+
+#Runmode local or remote
+runmode=local
+	

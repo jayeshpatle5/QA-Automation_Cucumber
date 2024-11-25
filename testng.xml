@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Suite" >
+
+  
+<!--   <listeners>-->
+<!--        <listener class-name="com.online.listeners.AnnotationTransformer"/>-->
+<!--  </listeners>-->
+
+    <test name="TestFirefox">
+
+         <parameter name="browser" value="firefox" />
+
+        <classes>
+            
+            <class name="com.online.TestRunnerOnline"></class>
+
+        </classes>
+
+    </test> 
+
+    <test name="TestChrome">
+
+        <parameter name="browser" value="chrome" />
+
+        <classes>
+
+            <class name="com.online.TestRunnerOnline"></class>
+
+        </classes>
+
+    </test> 
+    <test name="Testedge">
+
+        <parameter name="browser" value="edge" />
+
+        <classes>
+
+            <class name="com.online.TestRunnerOnline"></class>
+
+        </classes>
+
+    </test>
+
+</suite> <!-- Suite -->
