@@ -9,29 +9,29 @@
 <!--        <listener class-name="com.online.listeners.AnnotationTransformer"/>-->
 <!--  </listeners>-->
 
-    <test name="TestFirefox">
+<!--    <test name="TestFirefox">-->
 
-         <parameter name="browser" value="firefox" />
+<!--         <parameter name="browser" value="firefox" />-->
 
-        <classes>
-            
-            <class name="com.online.TestRunnerOnline"></class>
+<!--        <classes>-->
+<!--            -->
+<!--            <class name="com.online.TestRunnerOnline"></class>-->
 
-        </classes>
+<!--        </classes>-->
 
-    </test> 
+<!--    </test> -->
 
-    <test name="TestChrome">
+<!--    <test name="TestChrome">-->
 
-        <parameter name="browser" value="chrome" />
+<!--        <parameter name="browser" value="chrome" />-->
 
-        <classes>
+<!--        <classes>-->
 
-            <class name="com.online.TestRunnerOnline"></class>
+<!--            <class name="com.online.TestRunnerOnline"></class>-->
 
-        </classes>
+<!--        </classes>-->
 
-    </test> 
+<!--    </test> -->
     <test name="Testedge">
 
         <parameter name="browser" value="edge" />

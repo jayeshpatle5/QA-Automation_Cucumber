@@ -221,8 +221,6 @@
 						<configuration>
 							<suiteXmlFiles>
 								<suiteXmlFile>testng.xml</suiteXmlFile> <!-- Path to your TestNG XML file -->
-							    <!--<suiteXmlFile>testng2.xml</suiteXmlFile>
-							    <suiteXmlFile>testng3.xml</suiteXmlFile>-->
 							</suiteXmlFiles>
 						<!--	<properties>
 								<dataprovidercount>30</dataprovidercount>

@@ -1,5 +1,7 @@
 package com.online.stepdefs;
 
+import com.online.pages.LoginPage;
+import com.online.pages.UserDashboardPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -12,24 +14,38 @@ import org.testng.Assert;
 public class StepDefinition {
 
     private static final Logger logger = LogManager.getLogger(StepDefinition.class);
+    LoginPage loginpage = new LoginPage();
+    UserDashboardPage userdashboardpage = new UserDashboardPage();
 
     @Given("a user is on the Login page")
-    public void a_user_is_on_the_Login_page()
-    {
-        System.out.println("This is login page.");
-        logger.info("STEP : a user is on the Activity Feeds widget: PASSED");
+    public void aUserIsOnTheLoginPage() {
+        loginpage.isPageDisplayed();
     }
 
-    @When("a user pass a username and password")
-    public void aUserPassAUsernameAndPassword() {
-        Assert.assertTrue(false);
+    @When("a user enters username {string} and password {string}")
+    public void aUserEntersUsernameAndPassword(String username, String password) {
+        loginpage.enterUserDetails(username, password);
     }
 
     @And("click on submit button")
     public void clickOnSubmitButton() {
+        loginpage.clickSubmitBtn();
     }
 
-    @Then("a user navigates to the homepage")
-    public void aUserNavigatesToTheHomepage() {
+
+    @Then("a user navigates to the user dashboard")
+    public void aUserNavigatesToTheUserDashboard() {
+        loginpage.isDashboardDisplayed();
+    }
+
+
+    @When("a user clicks on welcome icon")
+    public void aUserClicksOnWelcomeIcon() {
+        userdashboardpage.clickonWelcomeicon();
+    }
+
+    @And("clicks on logout link")
+    public void clicksOnLogoutLink() {
+        userdashboardpage.clickOnlogoutlink();
     }
 }

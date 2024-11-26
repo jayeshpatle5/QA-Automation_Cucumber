@@ -49,6 +49,10 @@ public class BasePage {
 		return DriverManager.getDriver().getTitle();
 	}
 
+	protected String getCurrentpageUrl(){
+		logger.info(DriverManager.getDriver().getCurrentUrl() + " Current Url found successfully");
+		return DriverManager.getDriver().getCurrentUrl();
+	}
 
 	//By using getShadowRoot() method;
 	public  static WebDriver getDriverByShadowRoot(){
@@ -202,7 +206,6 @@ public static WebElement findElementByShadowRootMethod(WebDriver driver, By pare
 		logger.info("get the text using JavaScript Executor "+title);
 		return title;
 	}
-
 
 
 
