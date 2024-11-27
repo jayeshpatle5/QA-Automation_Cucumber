@@ -33,7 +33,7 @@ public class ExtentPropertiesUpdater {
         // Save updated properties to the same file
         try (OutputStream output = new FileOutputStream(propertiesFilePath)) {
             properties.store(output, "saved ");
-            WindowsGeneralActions.userWait(5000);
+            WebGeneralActions.userWait(5000);
         } catch (IOException io) {
             io.printStackTrace();
         }
@@ -58,7 +58,7 @@ public class ExtentPropertiesUpdater {
         // Save updated properties to the same file
         try (OutputStream output = new FileOutputStream(propertiesFilePath)) {
             properties.store(output, "saved ");
-            WindowsGeneralActions.userWait(5000);
+            WebGeneralActions.userWait(5000);
         } catch (IOException io) {
             io.printStackTrace();
         }

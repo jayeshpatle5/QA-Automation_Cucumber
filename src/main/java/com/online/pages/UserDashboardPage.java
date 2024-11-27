@@ -12,6 +12,7 @@ public class UserDashboardPage extends BasePage {
 
     By welcomebtnby = By.id("welcome");
     By logoutby = By.linkText("Logout");
+    By myinfoby =By.id("menu_pim_viewMyDetails");
 
     public void clickonWelcomeicon(){
         click(welcomebtnby, WaitStrategy.VISIBLE, "welcome button");
@@ -30,5 +31,9 @@ public class UserDashboardPage extends BasePage {
                 .as("String actually Not Blank").isNotBlank()
                 .isEqualTo("OrangeHRM");
         logger.info(title+" title is verified successfully");
+    }
+
+    public void clickOnMyinfoTab(){
+        click(myinfoby, WaitStrategy.VISIBLE, "myinfo Tab");
     }
 }

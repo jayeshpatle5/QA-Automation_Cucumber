@@ -3,13 +3,13 @@ package com.commonUtils;
 import com.commonUtils.enums.WaitStrategy;
 import com.online.driver.DriverManager;
 import com.online.driver.ExpliciteWaitFactory;
-import com.online.pages.BasePage;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.awt.*;
@@ -21,9 +21,9 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WindowsGeneralActions {
+public class WebGeneralActions {
 
-        private static final Logger logger = LogManager.getLogger(WindowsGeneralActions.class);
+        private static final Logger logger = LogManager.getLogger(WebGeneralActions.class);
 
         public static WebElement waitForByElement(By element, long timeOut){
             WebDriverWait wt = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(timeOut));
@@ -52,7 +52,15 @@ public class WindowsGeneralActions {
 
 
     protected void enterText(By by, WaitStrategy waitStrategy, String value,String elementName){
+        ExpliciteWaitFactory.performExplicteWait(waitStrategy, by).clear();
         ExpliciteWaitFactory.performExplicteWait(waitStrategy, by).sendKeys(value);
+        logger.info("Text entered for given "+ elementName);
+    }
+
+    public void selectValuefromdropdownByVisibleText(By by, WaitStrategy waitStrategy, String value, String elmentName){
+        WebElement dropdown = ExpliciteWaitFactory.performExplicteWait(waitStrategy,by);
+        Select select = new Select(dropdown);
+        select.selectByVisibleText(value);
     }
 
     protected String getPageTitle() {
@@ -60,9 +68,15 @@ public class WindowsGeneralActions {
         return DriverManager.getDriver().getTitle();
     }
 
-    protected String getCurrentpageUrl(){
+    public String getCurrentpageUrl(){
         logger.info(DriverManager.getDriver().getCurrentUrl() + " Current Url found successfully");
         return DriverManager.getDriver().getCurrentUrl();
+    }
+
+    public String getTextofElement(By by, WaitStrategy waitStrategy, String elementName){
+
+       logger.info(ExpliciteWaitFactory.performExplicteWait(waitStrategy, by).getText() +"is given text of " + elementName);
+       return ExpliciteWaitFactory.performExplicteWait(waitStrategy, by).getText();
     }
 
     //By using getShadowRoot() method;
@@ -96,7 +110,7 @@ public class WindowsGeneralActions {
 
     public static String getTextElementByShadowRoot(WebDriver driver, By parentSelector, By childSelector,String elementName)  {
         WebElement element = findElementByShadowRootMethod(driver, parentSelector, childSelector);
-        WindowsGeneralActions.userWait(3000);
+        WebGeneralActions.userWait(3000);
         if(!element.getText().isBlank()){
             logger.info(element.getText()+" captured from element "+elementName);
         }else {
