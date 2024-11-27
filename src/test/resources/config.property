@@ -1,4 +1,4 @@
-url=https://www.google.com
+url=http://orangehrm.qedgetech.com/symfony/web/index.php/auth/login
 CustomTime = 2000
 browser=chrome
 #dynamic reports yes or no

@@ -1,5 +1,6 @@
 package com.online.stepdefs;
 
+import com.commonUtils.config.BrowserConfigReader;
 import com.commonUtils.config.ReadPropertyFileUtils;
 import com.online.driver.AbstractBaseDriver;
 import com.online.driver.DriverManager;
@@ -25,11 +26,11 @@ public class Hooks extends AbstractBaseDriver{
         logger.info("*****************************************************************************************");
 
 
-//        initDriver(BrowserConfigReader.getBrowserType());
-        initDriver("chrome");
+        initDriver(BrowserConfigReader.getBrowserType());
+//        initDriver("chrome");
         
-       logger.info(ReadPropertyFileUtils.getValue("browser")+" Driver invoked successfully");
-
+//       logger.info(ReadPropertyFileUtils.getValue("browser")+" Driver invoked successfully");
+         logger.info(BrowserConfigReader.getBrowserType()+" Driver invoked successfully");
 
     }
     
