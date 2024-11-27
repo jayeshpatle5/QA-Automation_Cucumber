@@ -1,5 +1,5 @@
 #@chrome
-Feature: Login Feature
+Feature: Orangehrm myinfo
 
   Background: Login to the application
     Given a user is on the Login page
